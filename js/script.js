@@ -1,5 +1,5 @@
 const bart = document.querySelector('.bart');
-const obs = document.querySelector('.obstaculo');
+const pipe = document.querySelector('.obstaculo');
 
  
 const jump = () => {
@@ -11,15 +11,24 @@ const jump = () => {
 
 };
 
-const loop = setInterval(() => {
+const loop = setInterval(()=>{
 
-  const position = obs.offsetLeft;
+  const pipePosition = pipe.offsetLeft;
+  const bartPosition = +window.getComputedStyle(bart).bottom.replace('px', '');
 
-  if (position <= 80){
-    obs.computedStyleMap.animation = 'none'
+  console.log(bartPosition)
+  if (pipePosition <= 80 && bartPosition < 115 && pipePosition > 0){
+
+    pipe.style.animation = 'none'
+    pipe.style.left = `${pipePosition}px`
+
+    bart.style.animation = 'none'
+    bart.style.bottom = `${bartPosition}px`
+
+    bart.src = "imagens/1835-512x512.png"
+    bart.style.width = '150px'
   }
 
-
-}, 10);
+}, 10)
 
 document.addEventListener('keydown', jump);
