@@ -16,17 +16,27 @@
   overflow: hidden;
 }
 
+.piso {
+  position: absolute;
+  background-color: darkgrey;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+}
+
 .obstaculo {
   position: absolute;
   width: 150px;
   bottom: 0;
-  animation: lixo-animation 2s infinite linear;
+  animation: lixo-animation 2s infinite linear; 
+  z-index: 3;
 }
 
 .bart {
   width: 180px;
   position: absolute;
   bottom: 3%;
+  z-index: 4;
   
 }
 

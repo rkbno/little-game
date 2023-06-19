@@ -16,7 +16,7 @@ const loop = setInterval(()=>{
   const pipePosition = pipe.offsetLeft;
   const bartPosition = +window.getComputedStyle(bart).bottom.replace('px', '');
 
-  console.log(bartPosition)
+  
   if (pipePosition <= 80 && bartPosition < 115 && pipePosition > 0){
 
     pipe.style.animation = 'none'
