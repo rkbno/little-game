@@ -16,6 +16,14 @@
   overflow: hidden;
 }
 
+.nuvem {
+  position: absolute;
+  top: 15%;
+  /* animation: nuvem-animation 30s infinite linear;  */
+}
+
+
+
 .piso {
   position: absolute;
   background-color: darkgrey;
@@ -28,7 +36,7 @@
   position: absolute;
   width: 150px;
   bottom: 0;
-  animation: lixo-animation 2s infinite linear; 
+  /* animation: lixo-animation 2s infinite linear;  */
   z-index: 3;
 }
 
@@ -37,7 +45,6 @@
   position: absolute;
   bottom: 3%;
   z-index: 4;
-  
 }
 
 .jump {
@@ -64,4 +71,14 @@
     bottom: 3%;
   }
 }
+
+@keyframes nuvem-animation {
+  from {
+    right: -600px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
 
