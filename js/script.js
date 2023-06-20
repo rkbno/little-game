@@ -7,6 +7,8 @@ const btn = document.querySelector('.botao')
 const div = document.querySelector('.game-board')
 let loop = null;
 
+
+
 btn.addEventListener('click', clicou)
 
 function clicou (){
@@ -30,20 +32,33 @@ function clicou (){
 
 
 
+const btnRestart = document.querySelector('#btn-restart');
 
+function resetGame() {
+  lixo.style.animation = 'lixo-animation 2s infinite linear';
+  nuvem.style.animation = 'nuvem-animation 30s infinite linear';
+  
+  bart.src = "imagens/zyro-image.png";
+  
+  btn.style.opacity = '1';
+  div.style.filter = 'invert(30%)';
+};
+
+btnRestart.addEventListener('click', resetGame);
 
 function startGame(){
   const jump = () => {
     bart.classList.add('jump');
     setTimeout(() => {
-    bart.classList.remove('jump');
+      bart.classList.remove('jump');
     },1000);
   };
-
+  
+  
   loop = setInterval(()=>{
     const lixoPosition = lixo.offsetLeft;
     const bartPosition = +window.getComputedStyle(bart).bottom.replace('px', '');
-
+    
     if (lixoPosition <= 80 && bartPosition < 115 && lixoPosition > 0){
       lixo.style.animation = 'none'
       lixo.style.left = `${lixoPosition}px`
@@ -61,13 +76,6 @@ function startGame(){
   document.addEventListener('keydown', jump);
 }
 
-function resetGame() {
-  lixo.style.animation = 'lixo-animation 2s infinite linear';
-  nuvem.style.animation = 'nuvem-animation 30s infinite linear';
-  
-  bart.src = "imagens/zyro-image.png"
 
-  btn.style.opacity = '1';
-  div.style.filter = 'invert(30%)';
-}
+
 
