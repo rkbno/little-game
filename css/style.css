@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 .game-board {
   background: linear-gradient(to bottom, #87ceeb, #1e90ff);
   width: 100%;
@@ -14,36 +12,22 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  filter: invert(30%);
+  /* filter: invert(30%); */
   z-index: 0.5;
-
 }
 
-.botao {
+.score {
   position: absolute;
-  top: 50%;
-  right: 50%;
-  width: 100px;
-  height: 20px;
-  background-color: dark;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  z-index: 3;
-}
-
-.botao:hover {
-  transform: scale(1.1);
+  top: 5%;
+  right: 10%;
+  font-size: 155%;
 }
 
 .nuvem {
   position: absolute;
   top: 15%;
-  /* animation: nuvem-animation 30s infinite linear;  */
+  animation: nuvem-animation 30s infinite linear; 
 }
-
-
 
 .piso {
   position: absolute;
@@ -58,7 +42,7 @@
   position: absolute;
   width: 150px;
   bottom: 0;
-  /* animation: lixo-animation 2s infinite linear;  */
+  animation: lixo-animation 2s infinite linear; 
   z-index: 10;
 }
 
@@ -102,5 +86,23 @@
     right: 100%;
   }
 }
+
+/* .botao, .botao2 {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 100px;
+  height: 20px;
+  background-color: dark;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  z-index: 3;
+}
+
+.botao:hover, .botao2:hover {
+  transform: scale(1.1);
+} */
 
 

@@ -1,70 +1,51 @@
-// alert('Precione "ESPAÇO" para começar o seu jogo, Boa Sorte :D');
-
+alert('Clique em qualquer lugar para começar o jogo! Boa Sorte :D')
 const bart = document.querySelector('.bart');
 const lixo = document.querySelector('.obstaculo');
-const nuvem = document.querySelector('.nuvem');
-const btn = document.querySelector('.botao');
+// const btn = document.querySelector('.botao');
 const div = document.querySelector('.game-board');
+const score = document.querySelector('.score')
 let gameStarted = false;
-
-btn.addEventListener('click', clicou);
+let count = 0 
+ 
+div.addEventListener('click', clicou);
 
 function clicou (){
   if (!gameStarted) {
     startGame();
-    lixo.style.animation = 'lixo-animation 2s infinite linear';
-    nuvem.style.animation = 'nuvem-animation 30s infinite linear';
-    btn.style.opacity = '0';
-    div.style.filter = 'invert(0)'
-    gameStarted = true;
   };
 };
 
-
-// document.addEventListener('click', function(event){
-//   if (event === btn){
-//     startGame();
-//     lixo.style.animation = 'lixo-animation 2s infinite linear';
-//     nuvem.style.animation = 'nuvem-animation 30s infinite linear';
-//   };
-// });
-
-
-
-
+const jump = () => {
+  bart.classList.add('jump');
+  
+  setTimeout(() => {
+  bart.classList.remove('jump');
+  },1000);
+};
 
 function startGame(){
-
-  const jump = () => {
-    bart.classList.add('jump');
-    
-    setTimeout(() => {
-    bart.classList.remove('jump');
-    },1000);
-  };
-
-  const loop = setInterval(()=>{
+  var loop = setInterval(()=>{
     const lixoPosition = lixo.offsetLeft;
     const bartPosition = +window.getComputedStyle(bart).bottom.replace('px', '');
 
     if (lixoPosition <= 80 && bartPosition < 115 && lixoPosition > 0){
-      clearInterval(loop);
-
-      lixo.style.animation = 'none';
+      alert(`Game Over! Seu score foi: ${count}`);
       lixo.style.left = `${lixoPosition}px`;
-
-      bart.style.animation = 'none';
       bart.style.bottom = `${bartPosition}px`;
 
       bart.src = "imagens/1835-512x512.png";
       bart.style.width = '150px';
+
+      // btn.style.opacity = '1';
       
-      // alert('Infelizmente você perdeu, precione clique para reiniciar o jogo!')
-      btn.style.opacity = '1';
-      gameStarted = false;
-    }
-  }, 10)
+      count = 0;
+    };
+    count++;
+    score.innerHTML = `SCORE: ${count}`;
+  }, 10);
   
   document.addEventListener('keydown', jump);
-}
+};
+
+
 
