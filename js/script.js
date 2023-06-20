@@ -1,7 +1,6 @@
 alert('Clique em qualquer lugar para começar o jogo! Boa Sorte :D')
 const bart = document.querySelector('.bart');
 const lixo = document.querySelector('.obstaculo');
-// const btn = document.querySelector('.botao');
 const div = document.querySelector('.game-board');
 const score = document.querySelector('.score')
 let gameStarted = false;
@@ -35,8 +34,6 @@ function startGame(){
 
       bart.src = "imagens/1835-512x512.png";
       bart.style.width = '150px';
-
-      // btn.style.opacity = '1';
       
       count = 0;
     };
