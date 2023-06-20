@@ -38,7 +38,7 @@ function startGame(){
       count = 0;
     };
     count++;
-    score.innerHTML = `SCORE: ${count}`;
+    score.innerHTML = `Score: ${count}`;
   }, 10);
   
   document.addEventListener('keydown', jump);
