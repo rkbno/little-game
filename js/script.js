@@ -1,16 +1,31 @@
-alert('Precione "ESPAÇO" para começar o seu jogo, Boa Sorte :D');
+// alert('Precione "ESPAÇO" para começar o seu jogo, Boa Sorte :D');
 
 const bart = document.querySelector('.bart');
 const lixo = document.querySelector('.obstaculo');
 const nuvem = document.querySelector('.nuvem');
+const btn = document.querySelector('.botao')
+const div = document.querySelector('.game-board')
 
-document.addEventListener('keydown', function(event){
-  if (event.code === 'Enter'){
-    startGame();
-    lixo.style.animation = 'lixo-animation 2s infinite linear';
-    nuvem.style.animation = 'nuvem-animation 30s infinite linear';
-  };
-});
+btn.addEventListener('click', clicou)
+function clicou (){
+  startGame();
+  lixo.style.animation = 'lixo-animation 2s infinite linear';
+  nuvem.style.animation = 'nuvem-animation 30s infinite linear';
+  btn.style.opacity = '0';
+  div.style.filter = 'invert(0)'
+};
+
+
+// document.addEventListener('click', function(event){
+//   if (event === btn){
+//     startGame();
+//     lixo.style.animation = 'lixo-animation 2s infinite linear';
+//     nuvem.style.animation = 'nuvem-animation 30s infinite linear';
+//   };
+// });
+
+
+
 
 
 function startGame(){
@@ -39,7 +54,7 @@ function startGame(){
       bart.src = "imagens/1835-512x512.png"
       bart.style.width = '150px'
       
-      alert('Infelizmente você perdeu, precione enter para reiniciar o jogo!')
+      // alert('Infelizmente você perdeu, precione enter para reiniciar o jogo!')
     }
   }, 10)
   
