@@ -37,8 +37,8 @@ function restartGame(){
   loop = setInterval(()=>{
     const lixoPosition = lixo.offsetLeft;
     const bartPosition = +window.getComputedStyle(bart).bottom.replace('px', '');
-    
-    if (lixoPosition <= 80 && bartPosition < 115 && lixoPosition > 0){
+  
+    if (lixoPosition <= 80 && bartPosition < 115 && lixoPosition > 0 ){
       alert(`Game Over! Seu score foi: ${count}`);
       restartGame();
     };

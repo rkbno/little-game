@@ -12,7 +12,6 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  /* filter: invert(30%); */
   z-index: 0.5;
 }
 
@@ -87,22 +86,11 @@
   }
 }
 
-/* .botao, .botao2 {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  width: 100px;
-  height: 20px;
-  background-color: dark;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-  z-index: 3;
+@keyframes olha-a-pedra {
+  from {
+    right: -1000px;
+  }
+  to {
+    right: 100%;
+  }
 }
-
-.botao:hover, .botao2:hover {
-  transform: scale(1.1);
-} */
-
-
